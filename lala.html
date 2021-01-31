@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Total Score</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Outline|Space+Mono" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+  <style type="text/css">
+    #dist {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translate(-50%, 0%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+  </style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="dist">
+    
+
+    <div class="label">Total Score</div>
+    <div id="totalvalue">000</div>
+</div>
+<!-- partial -->
+<script type="text/javascript">
+  const username="asdf"
+  $.ajax({
+        url: "getTotalScore.php?username="+username
+      }).done(function(data) {
+        console.log(data);
+        document.getElementById("totalvalue").innerHTML=data;
+      });
+  </script>
+
+</body>
+</html>
